@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-pods
+  namespace: test
+  labels:
+    app: test
+spec:
+  restartPolicy: Never
+  containers:
+    - name: busybox1
+      image: busybox
+      imagePullPolicy: IfNotPresent
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "50m"
+        limits:
+          memory: "128Mi"
+          cpu: "100m"
+      args:
+        - bin/sh
+        - -c
+        - ls; sleep 3600
+    - name: busybox2
+      image: busybox
+      imagePullPolicy: IfNotPresent
+      resources:
+        requests:
+          memory: "64Mi"
+          cpu: "50m"
+        limits:
+          memory: "128Mi"
+          cpu: "100m"
+      args:
+        - bin/sh
+        - -c
+        - echo Hello world; sleep 3600
