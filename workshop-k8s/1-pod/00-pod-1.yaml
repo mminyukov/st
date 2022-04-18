@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: test-pod
-  namespace: test
+  namespace: workshop
   labels:
     app: test
 spec:

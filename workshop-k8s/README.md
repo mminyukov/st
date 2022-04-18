@@ -65,6 +65,11 @@ choco install kubernetes-helm
 # Основные команды kubectl
 Шпаргалка по [kubectl](https://kubernetes.io/ru/docs/reference/kubectl/cheatsheet/)
 
+Изменить путь до config файла через переменную окружения
+```
+export KUBECONFIG=<PATH TO FILE CONFIG>
+```
+
 Посмотреть текущие настройки подключения
 ```
 kubectl config view
